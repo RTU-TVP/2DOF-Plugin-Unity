@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace LogitechG29.Core
 {
-    [CreateAssetMenu(fileName = "InputTest", menuName = "Input/InputControllerLogitechG29Reader")]
+    [CreateAssetMenu(fileName = "InputControllerReader", menuName = "Input/InputControllerLogitechG29Reader")]
     public class InputControllerReader : ScriptableObject,
         InputController.IButtonsActions,
         InputController.IHandbrakeActions,
@@ -12,18 +12,6 @@ namespace LogitechG29.Core
         InputController.ISteeringwheelActions,
         InputController.ITransmissionActions
     {
-        public static InputControllerReader Instance { get; private set; }
-
-        private void Awake()
-        {
-            if (Instance != null)
-            {
-                Destroy(Instance);
-            }
-
-            Instance = this;
-        }
-
         [SerializeField] private bool _isDebugMode;
         private InputController _input;
 
