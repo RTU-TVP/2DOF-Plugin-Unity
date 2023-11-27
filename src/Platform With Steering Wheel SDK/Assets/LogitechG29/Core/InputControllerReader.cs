@@ -400,6 +400,20 @@ namespace LogitechG29.Core
 
 #endregion
 
+#region DebugMode
+
+        public void SetDebugMode(bool value)
+        {
+            _isDebugMode = value;
+        }
+
+        public bool GetDebugMode()
+        {
+            return _isDebugMode;
+        }
+
+#endregion
+
 #region Handlers
 
         public void OnDpad(InputAction.CallbackContext context)
