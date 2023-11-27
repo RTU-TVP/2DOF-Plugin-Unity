@@ -1,28 +1,29 @@
+#region
 
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Scripting;
 
-namespace Input_LogitechG29.Runtime
+#endregion
+
+namespace LogitechG29.Runtime
 {
 #if UNITY_EDITOR
-    [InitializeOnLoad]
+    [InitializeOnLoad, Preserve]
 #endif
-    [Preserve]
-    public class OneMinusProcessor: InputProcessor<float>
+    public class OneMinusProcessor : InputProcessor<float>
     {
-        public override float Process(float value, InputControl control)
-        {
-            return 1f - value;
-        }
-
 #if UNITY_EDITOR
         static OneMinusProcessor()
         {
             Initialize();
         }
 #endif
+        public override float Process(float value, InputControl control)
+        {
+            return 1f - value;
+        }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()

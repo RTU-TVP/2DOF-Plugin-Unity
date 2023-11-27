@@ -39,12 +39,12 @@ namespace _2DOF.Sample
                 _telemetryDataData.AnglesY = rotation.eulerAngles.y > 180
                     ? rotation.eulerAngles.y - 360
                     : rotation.eulerAngles.y;
-            
+
                 var velocity = _rigidbody.velocity;
                 _telemetryDataData.VelocityZ = velocity.z;
                 _telemetryDataData.VelocityX = velocity.x;
                 _telemetryDataData.VelocityY = velocity.y;
-            
+
                 yield return null;
             }
         }
