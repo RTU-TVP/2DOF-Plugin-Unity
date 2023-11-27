@@ -1,21 +1,30 @@
+#region
+
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Scripting;
 
-namespace Input_LogitechG29.Runtime
+#endregion
+
+namespace LogitechG29.Runtime
 {
 #if UNITY_EDITOR
-    [InitializeOnLoad]
+    [InitializeOnLoad, Preserve]
 #endif
-    [Preserve]
     public class ExtensionProcessor : InputProcessor<float>
     {
-        [Tooltip("Sensitivity Speed")] public float SensitivitySpeed = 0;
+#if UNITY_EDITOR
+        static ExtensionProcessor()
+        {
+            Initialize();
+        }
+#endif
+
+        private float _previousValue;
 
         [Tooltip("Gravity Speed")] public float GravitySpeed = 0;
-
-        private float _previousValue = 0f;
+        [Tooltip("Sensitivity Speed")] public float SensitivitySpeed = 0;
 
         public override float Process(float value, InputControl control)
         {
@@ -27,13 +36,6 @@ namespace Input_LogitechG29.Runtime
             _previousValue = Mathf.MoveTowards(_previousValue, value, SensitivitySpeed * Time.unscaledDeltaTime);
             return _previousValue;
         }
-
-#if UNITY_EDITOR
-        static ExtensionProcessor()
-        {
-            Initialize();
-        }
-#endif
 
         [RuntimeInitializeOnLoadMethod]
         private static void Initialize()

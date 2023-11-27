@@ -1,9 +1,13 @@
-using Input_LogitechG29.Runtime;
+#region
+
+using LogitechG29.Runtime;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem.Editor;
 
-namespace Input_LogitechG29.Editor
+#endregion
+
+namespace LogitechG29.Editor
 {
     public class ExtensionProcessorEditor : InputParameterEditor<ExtensionProcessor>
     {
@@ -13,10 +17,10 @@ namespace Input_LogitechG29.Editor
             {
                 normal = new GUIStyleState
                 {
-                    textColor = Color.grey,
+                    textColor = Color.grey
                 },
                 fontStyle = FontStyle.Italic,
-                wordWrap = true,
+                wordWrap = true
             };
 
             EditorGUILayout.LabelField("Примечание: Для работы тип действия должен быть сквозным", style);

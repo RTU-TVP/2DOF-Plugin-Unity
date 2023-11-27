@@ -12,9 +12,9 @@ namespace _2DOF.Sample
     public class GameController : MonoBehaviour
     {
         private const string MAP_NAME = "2DOFMemoryDataGrabber";
-        private ObjectTelemetryData _objectTelemetryData;
 
         [SerializeField] private CarTelemetryHandler _carTelemetryHandler;
+        private ObjectTelemetryData _objectTelemetryData;
 
         private void Awake()
         {

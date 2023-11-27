@@ -1,8 +1,12 @@
+#region
+
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace LogitechG29.Core
+#endregion
+
+namespace LogitechG29.Core.Input
 {
     [CreateAssetMenu(fileName = "InputControllerReader", menuName = "Input/InputControllerLogitechG29Reader")]
     public class InputControllerReader : ScriptableObject,
@@ -46,126 +50,126 @@ namespace LogitechG29.Core
 
         private void RegisterDebugOnActions()
         {
-            OnNorthButtonCallback = (value) =>
+            OnNorthButtonCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnNorthButtonCallback: " + value);
                 }
             };
-            OnSouthButtonCallback = (value) =>
+            OnSouthButtonCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnSouthButtonCallback: " + value);
                 }
             };
-            OnEastButtonCallback = (value) =>
+            OnEastButtonCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnEastButtonCallback: " + value);
                 }
             };
-            OnWestButtonCallback = (value) =>
+            OnWestButtonCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnWestButtonCallback: " + value);
                 }
             };
-            OnRightBumperCallback = (value) =>
+            OnRightBumperCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnRightBumperCallback: " + value);
                 }
             };
-            OnLeftBumperCallback = (value) =>
+            OnLeftBumperCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnLeftBumperCallback: " + value);
                 }
             };
-            OnRightShiftCallback = (value) =>
+            OnRightShiftCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnRightShiftCallback: " + value);
                 }
             };
-            OnLeftShiftCallback = (value) =>
+            OnLeftShiftCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnLeftShiftCallback: " + value);
                 }
             };
-            OnShareCallback = (value) =>
+            OnShareCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnShareCallback: " + value);
                 }
             };
-            OnOptionsCallback = (value) =>
+            OnOptionsCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnOptionsCallback: " + value);
                 }
             };
-            OnHomeCallback = (value) =>
+            OnHomeCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnHomeCallback: " + value);
                 }
             };
-            OnRightStickButtonCallback = (value) =>
+            OnRightStickButtonCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnRightStickButtonCallback: " + value);
                 }
             };
-            OnLeftStickButtonCallback = (value) =>
+            OnLeftStickButtonCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnLeftStickButtonCallback: " + value);
                 }
             };
-            OnPlusCallback = (value) =>
+            OnPlusCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnPlusCallback: " + value);
                 }
             };
-            OnMinusCallback = (value) =>
+            OnMinusCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnMinusCallback: " + value);
                 }
             };
-            OnRightTurnCallback = (value) =>
+            OnRightTurnCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnRightTurnCallback: " + value);
                 }
             };
-            OnLeftTurnCallback = (value) =>
+            OnLeftTurnCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("OnLeftTurnCallback: " + value);
                 }
             };
-            OnReturnCallback = (value) =>
+            OnReturnCallback = value =>
             {
                 if (_isDebugMode)
                 {
@@ -173,7 +177,7 @@ namespace LogitechG29.Core
                 }
             };
 
-            HatSwitchCallback = (value) =>
+            HatSwitchCallback = value =>
             {
                 if (_isDebugMode)
                 {
@@ -181,49 +185,49 @@ namespace LogitechG29.Core
                 }
             };
 
-            Shifter1Callback = (value) =>
+            Shifter1Callback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("Shifter1Callback: " + value);
                 }
             };
-            Shifter2Callback = (value) =>
+            Shifter2Callback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("Shifter2Callback: " + value);
                 }
             };
-            Shifter3Callback = (value) =>
+            Shifter3Callback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("Shifter3Callback: " + value);
                 }
             };
-            Shifter4Callback = (value) =>
+            Shifter4Callback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("Shifter4Callback: " + value);
                 }
             };
-            Shifter5Callback = (value) =>
+            Shifter5Callback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("Shifter5Callback: " + value);
                 }
             };
-            Shifter6Callback = (value) =>
+            Shifter6Callback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("Shifter6Callback: " + value);
                 }
             };
-            Shifter7Callback = (value) =>
+            Shifter7Callback = value =>
             {
                 if (_isDebugMode)
                 {
@@ -231,28 +235,28 @@ namespace LogitechG29.Core
                 }
             };
 
-            SteeringCallback = (value) =>
+            SteeringCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("SteeringCallback: " + value);
                 }
             };
-            ThrottleCallback = (value) =>
+            ThrottleCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("ThrottleCallback: " + value);
                 }
             };
-            BrakeCallback = (value) =>
+            BrakeCallback = value =>
             {
                 if (_isDebugMode)
                 {
                     Debug.Log("BrakeCallback: " + value);
                 }
             };
-            ClutchCallback = (value) =>
+            ClutchCallback = value =>
             {
                 if (_isDebugMode)
                 {
@@ -260,7 +264,7 @@ namespace LogitechG29.Core
                 }
             };
 
-            HandbrakeCallback = (value) =>
+            HandbrakeCallback = value =>
             {
                 if (_isDebugMode)
                 {

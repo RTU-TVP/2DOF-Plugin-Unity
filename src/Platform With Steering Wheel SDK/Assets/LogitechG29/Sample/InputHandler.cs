@@ -1,6 +1,11 @@
+#region
+
+using LogitechG29.Core.Input;
 using UnityEngine;
 
-namespace LogitechG29.Core.Input
+#endregion
+
+namespace LogitechG29.Sample
 {
     public class InputHandler : MonoBehaviour
     {
@@ -8,7 +13,7 @@ namespace LogitechG29.Core.Input
 
         private void Start()
         {
-            _inputControllerReader.OnHomeCallback += (value) => Application.Quit();
+            _inputControllerReader.OnHomeCallback += value => Application.Quit();
 
             _inputControllerReader.OnOptionsCallback += OnOptionsCallback;
         }
