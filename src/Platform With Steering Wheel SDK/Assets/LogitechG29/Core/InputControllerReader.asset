@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccaeb6464530f444b959e3b98421344b, type: 3}
-  m_Name: InputControllerReader_LogitechG29
+  m_Name: InputControllerReader
   m_EditorClassIdentifier: 
   _isDebugMode: 0
