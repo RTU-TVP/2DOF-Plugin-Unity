@@ -1,5 +1,5 @@
 {
-    "name": "InputController_LogitechG29",
+    "name": "InputController",
     "maps": [
         {
             "name": "Buttons",
@@ -670,11 +670,11 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "e10cbaf2-deba-4445-9d4f-c05f66144da8",
-                    "path": "<Logitech G29 Racing Wheel>/southButton",
+                    "id": "2e0501f1-5b0e-43d6-9fbd-35f5addc0cb8",
+                    "path": "<HID::wch.cn Hand Brake>/trigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Logitech G29",
+                    "groups": "",
                     "action": "Handbrake",
                     "isComposite": false,
                     "isPartOfComposite": false
