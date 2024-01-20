@@ -8,17 +8,17 @@ using System.Threading;
 namespace _2DOF.Core
 {
     /// <summary>
-    /// Этот класс используется для отправки данных в файл, отображаемый в памяти.
+    ///     Этот класс используется для отправки данных в файл, отображаемый в памяти.
     /// </summary>
     public sealed class SendingData
     {
         /// <summary>
-        /// Статический экземпляр класса.
+        ///     Статический экземпляр класса.
         /// </summary>
         public static SendingData Instance;
 
         /// <summary>
-        /// Конструктор.
+        ///     Конструктор.
         /// </summary>
         /// <param name="objectTelemetryData">Данные, которые будут отправляться.</param>
         public SendingData(ObjectTelemetryData objectTelemetryData)
@@ -30,21 +30,21 @@ namespace _2DOF.Core
         }
 
         /// <summary>
-        /// Имя ячейки памяти, которая будет создана.
+        ///     Имя ячейки памяти, которая будет создана.
         /// </summary>
         public const string MAP_NAME = "2DOFMemoryDataGrabber";
 
         /// <summary>
-        /// Время ожидания между отправками данных.
-        /// В миллисекундах.
+        ///     Время ожидания между отправками данных.
+        ///     В миллисекундах.
         /// </summary>
         public const int WAIT_TIME = 20;
 
-        private ObjectTelemetryData _objectTelemetryData;
+        private readonly ObjectTelemetryData _objectTelemetryData;
         private Thread _thread;
 
         /// <summary>
-        /// Запуск отправки данных.
+        ///     Запуск отправки данных.
         /// </summary>
         public void SendingStart()
         {
@@ -55,7 +55,7 @@ namespace _2DOF.Core
         }
 
         /// <summary>
-        /// Остановка отправки данных.
+        ///     Остановка отправки данных.
         /// </summary>
         public void SendingStop()
         {
@@ -63,7 +63,7 @@ namespace _2DOF.Core
         }
 
         /// <summary>
-        /// Обработчик данных.
+        ///     Обработчик данных.
         /// </summary>
         private void HandlerData()
         {

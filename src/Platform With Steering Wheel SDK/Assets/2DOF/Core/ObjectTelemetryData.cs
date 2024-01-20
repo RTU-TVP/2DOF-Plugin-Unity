@@ -1,47 +1,54 @@
+#region
+
+using System;
+
+#endregion
+
 namespace _2DOF.Core
 {
     /// <summary>
-    /// Данные телеметрии объекта.
+    ///     Класс ObjectTelemetryData используется для хранения и обработки данных телеметрии объекта.
     /// </summary>
+    [Serializable]
     public class ObjectTelemetryData
     {
         /// <summary>
-        /// Угл поворота по оси X.
+        ///     Угол поворота объекта по оси X.
         /// </summary>
         public double AnglesX { get; set; }
 
         /// <summary>
-        /// Угл поворота по оси Z.
+        ///     Угол поворота объекта по оси Z.
         /// </summary>
         public double AnglesZ { get; set; }
 
         /// <summary>
-        /// Угл поворота по оси Y.
+        ///     Угол поворота объекта по оси Y.
         /// </summary>
         public double AnglesY { get; set; }
 
         /// <summary>
-        /// Скорость по оси Z.
+        ///     Скорость объекта по оси Z.
         /// </summary>
         public double VelocityZ { get; set; }
 
         /// <summary>
-        /// Скорость по оси X.
+        ///     Скорость объекта по оси X.
         /// </summary>
         public double VelocityX { get; set; }
 
         /// <summary>
-        /// Скорость по оси Y.
+        ///     Скорость объекта по оси Y.
         /// </summary>
         public double VelocityY { get; set; }
 
         /// <summary>
-        /// Массив данных.
+        ///     Массив, содержащий все данные телеметрии объекта.
         /// </summary>
         public double[] DataArray => new[] { AnglesX, AnglesZ, AnglesY, VelocityZ, VelocityX, VelocityY };
 
         /// <summary>
-        /// Сброс данных.
+        ///     Метод для сброса всех данных телеметрии объекта до нуля.
         /// </summary>
         public void Reset()
         {
@@ -54,7 +61,7 @@ namespace _2DOF.Core
         }
 
         /// <summary>
-        /// Преобразование в строку.
+        ///     Переопределенный метод ToString для преобразования данных телеметрии объекта в строку.
         /// </summary>
         public override string ToString()
         {
