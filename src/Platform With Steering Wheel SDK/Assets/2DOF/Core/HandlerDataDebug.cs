@@ -1,29 +1,76 @@
 #region
 
+using System;
 using System.IO.MemoryMappedFiles;
+using System.Threading;
 using UnityEngine;
 
 #endregion
 
 namespace _2DOF.Core
 {
-    public class HandlerDataDebug : MonoBehaviour
+    /// <summary>
+    ///     Этот класс используется для отладки данных, отправляемых в файл, отображаемый в памяти.
+    /// </summary>
+    public static class HandlerDataDebug
     {
-        private void Update()
+        private static Thread _thread;
+
+        /// <summary>
+        ///     Запуск вывода данных в консоль.
+        /// </summary>
+        public static void PrintStart()
         {
-            using var memoryMappedFile = MemoryMappedFile.OpenExisting("2DOFMemoryDataGrabber");
-            using var accessor = memoryMappedFile.CreateViewAccessor();
+            PrintStop();
 
-            var bytes = new byte[accessor.Capacity];
+            _thread = new Thread(() =>
+            {
+                while (true)
+                {
+                    using var memoryMappedFile = MemoryMappedFile.OpenExisting(SendingData.MAP_NAME);
+                    PrintData(memoryMappedFile);
 
-            accessor.ReadArray(0, bytes, 0, bytes.Length);
+                    Thread.Sleep(SendingData.WAIT_TIME);
+                }
+            });
+            _thread.Start();
+        }
 
-            Debug.Log($"AnglesX: {bytes[0]}");
-            Debug.Log($"AnglesZ: {bytes[1]}");
-            Debug.Log($"AnglesY: {bytes[2]}");
-            Debug.Log($"VelocityZ: {bytes[3]}");
-            Debug.Log($"VelocityX: {bytes[4]}");
-            Debug.Log($"VelocityY: {bytes[5]}");
+        /// <summary>
+        ///     Остановка вывода данных в консоль.
+        /// </summary>
+        public static void PrintStop()
+        {
+            _thread?.Abort();
+        }
+
+        /// <summary>
+        ///     Вывод данных в консоль.
+        /// </summary>
+        private static void PrintData(MemoryMappedFile memoryMappedFile)
+        {
+            try
+            {
+                using var accessor = memoryMappedFile.CreateViewAccessor();
+
+                var bytes = new byte[accessor.Capacity];
+
+                accessor.ReadArray(0, bytes, 0, bytes.Length);
+
+                var str = $"AnglesX: {bytes[0]}, "
+                          + $"AnglesZ: {bytes[1]}, "
+                          + $"AnglesY: {bytes[2]}, "
+                          + $"VelocityZ: {bytes[3]}, "
+                          + $"VelocityX: {bytes[4]}, "
+                          + $"VelocityY: {bytes[5]}";
+
+                Debug.Log(str);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
