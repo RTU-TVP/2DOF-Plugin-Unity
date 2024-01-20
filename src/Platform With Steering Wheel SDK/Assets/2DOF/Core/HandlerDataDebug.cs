@@ -10,14 +10,14 @@ using UnityEngine;
 namespace _2DOF.Core
 {
     /// <summary>
-    /// Этот класс используется для отладки данных, отправляемых в файл, отображаемый в памяти.
+    ///     Этот класс используется для отладки данных, отправляемых в файл, отображаемый в памяти.
     /// </summary>
     public static class HandlerDataDebug
     {
         private static Thread _thread;
 
         /// <summary>
-        /// Запуск вывода данных в консоль.
+        ///     Запуск вывода данных в консоль.
         /// </summary>
         public static void PrintStart()
         {
@@ -37,7 +37,7 @@ namespace _2DOF.Core
         }
 
         /// <summary>
-        /// Остановка вывода данных в консоль.
+        ///     Остановка вывода данных в консоль.
         /// </summary>
         public static void PrintStop()
         {
@@ -45,7 +45,7 @@ namespace _2DOF.Core
         }
 
         /// <summary>
-        /// Вывод данных в консоль.
+        ///     Вывод данных в консоль.
         /// </summary>
         private static void PrintData(MemoryMappedFile memoryMappedFile)
         {
