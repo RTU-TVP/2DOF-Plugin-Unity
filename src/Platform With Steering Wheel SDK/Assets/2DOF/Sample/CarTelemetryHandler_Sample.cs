@@ -8,24 +8,41 @@ using UnityEngine;
 
 namespace _2DOF.Sample
 {
-    public class CarTelemetryHandler : MonoBehaviour
+    public class CarTelemetryHandler_Sample : MonoBehaviour
     {
         [SerializeField] private Transform vehicleTransform;
         [SerializeField] private Rigidbody _rigidbody;
-        private ObjectTelemetryData _telemetryDataData;
 
+        private ObjectTelemetryData _telemetryDataData;
+        private Coroutine _coroutine;
+        
         private void Start()
         {
-            StartCoroutine(TelemetryHandler());
+            _telemetryDataData = new ObjectTelemetryData();
+            SendingData.Instance = new SendingData(_telemetryDataData);
+        }
+        
+        public void OnEnable()
+        {
+            _coroutine = StartCoroutine(TelemetryHandler());
+            SendingData.Instance.SendingStart();
+        }
+
+        public void OnDisable()
+        {
+            StopCoroutine(_coroutine);
+            SendingData.Instance.SendingStop();
         }
 
         private IEnumerator TelemetryHandler()
         {
+            const float WAIT_TIME = SendingData.WAIT_TIME / 1000f;
+
             while (true)
             {
                 if (_telemetryDataData == null)
                 {
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(WAIT_TIME * 10f);
                     continue;
                 }
 
@@ -45,13 +62,8 @@ namespace _2DOF.Sample
                 _telemetryDataData.VelocityX = velocity.x;
                 _telemetryDataData.VelocityY = velocity.y;
 
-                yield return null;
+                yield return new WaitForSeconds(WAIT_TIME);
             }
-        }
-
-        public void SetObjectTelemetryData(ObjectTelemetryData objectTelemetryData)
-        {
-            _telemetryDataData = objectTelemetryData;
         }
     }
 }
