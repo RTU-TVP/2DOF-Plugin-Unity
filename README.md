@@ -1,4 +1,4 @@
-# Platform-With-Steering-Wheel-SDK
+# Platform-With-Steering-Wheel-Plugin
 
 ## Руль Logitech G29 и Коробка передач
 
