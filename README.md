@@ -1,4 +1,4 @@
-# Platform-With-Steering-Wheel-SDK
+# Platform-With-Steering-Wheel-Plugin
 
 ## Руль Logitech G29 и Коробка передач
 
@@ -23,5 +23,3 @@
 * Импорт asset: Импортируйте необходимые файлы в ваш Unity проект.
 
 * Настройка игрового объекта для считывания данных: Создайте/добавьте автомобиль на сцену, добавьте компонент Rigidbody, добавьте скрипт CarTelemetryHandler на игровой объект и подключите Transform и Rigidbody.
-
-* Настройка передачи данных на волну обработчика для платформы: Создайте пустой игровой объект, прикрепите компонент GameController, привяжите CarTelemetryHandler из вашего игрового объекта к компоненту GameController.
