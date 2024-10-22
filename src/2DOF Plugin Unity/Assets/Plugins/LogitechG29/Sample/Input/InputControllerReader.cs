@@ -312,7 +312,7 @@ namespace LogitechG29.Sample.Input
             HandbrakeCallback = default;
         }
 
-#region Values
+        #region Values
 
         public bool NorthButton { get; private set; }
         public bool SouthButton { get; private set; }
@@ -350,9 +350,9 @@ namespace LogitechG29.Sample.Input
 
         public float Handbrake { get; private set; }
 
-#endregion
+        #endregion
 
-#region Actions
+        #region Actions
 
         public Action<bool> OnNorthButtonCallback;
         public Action<bool> OnSouthButtonCallback;
@@ -390,9 +390,9 @@ namespace LogitechG29.Sample.Input
 
         public Action<float> HandbrakeCallback;
 
-#endregion
+        #endregion
 
-#region DebugMode
+        #region DebugMode
 
         public void SetDebugMode(bool value)
         {
@@ -404,9 +404,9 @@ namespace LogitechG29.Sample.Input
             return _isDebugMode;
         }
 
-#endregion
+        #endregion
 
-#region Handlers
+        #region Handlers
 
         public void OnDpad(InputAction.CallbackContext context)
         {
@@ -601,6 +601,6 @@ namespace LogitechG29.Sample.Input
             HandbrakeCallback?.Invoke(Handbrake);
         }
 
-#endregion
+        #endregion
     }
 }
