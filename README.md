@@ -1,8 +1,8 @@
-# Platform-With-Steering-Wheel-Plugin
+# 2DOF Plugin Unity
+
+[Rus](README.md) | [ENG](README_ENG.md)
 
 ## Руль Logitech G29 и Коробка передач
-
-[Документация](https://shutovks.notion.site/2DOF-8ffe2cc6af724077b89215dd924b8afa?pvs=4)
 
 ### Руководство по установке
 
@@ -15,8 +15,6 @@
 * Пропишите логику обработки входных данных: В вашем скрипте напишите логику для обработки результатов ввода, используя события и методы InputControllerReader.
 
 ## Подвижная платформа 2DOF
-
-[Документация](https://shutovks.notion.site/Logitech-G29-Driving-Force-Shifter-9a790d89fdbc43e5bf92de01b779f480?pvs=4)
 
 ### Руководство по установке подвижной платформы
 
