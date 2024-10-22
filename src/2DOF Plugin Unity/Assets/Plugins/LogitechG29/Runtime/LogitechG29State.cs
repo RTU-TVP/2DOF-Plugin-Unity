@@ -8,7 +8,7 @@ using UnityEngine.Scripting;
 
 #endregion
 
-namespace LogitechG29
+namespace LogitechG29.Runtime
 {
     [Preserve]
     public struct LogitechG29State : IInputStateTypeInfo
