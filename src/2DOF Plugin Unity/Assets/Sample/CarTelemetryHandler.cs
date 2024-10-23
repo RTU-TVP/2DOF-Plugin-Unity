@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using _2DOF;
 using UnityEngine;
@@ -43,6 +44,8 @@ public class CarTelemetryHandler : MonoBehaviour
             UpdateAngles();
             UpdateVelocity();
 
+            Debug.Log(_telemetryDataData.ToString());
+
             yield return new WaitForSeconds(WAIT_TIME);
         }
     }
@@ -54,16 +57,16 @@ public class CarTelemetryHandler : MonoBehaviour
 
     private void UpdateAngles()
     {
-        var rotation = vehicleTransform.rotation;
-        rotation.x = rotation.eulerAngles.x > 180
-            ? rotation.eulerAngles.x - 360
-            : rotation.eulerAngles.x;
-        rotation.z = rotation.eulerAngles.z > 180
-            ? rotation.eulerAngles.z - 360
-            : rotation.eulerAngles.z;
-        rotation.y = rotation.eulerAngles.y > 180
-            ? rotation.eulerAngles.y - 360
-            : rotation.eulerAngles.y;
-        _telemetryDataData.Angles = rotation.eulerAngles;
+        var euler = vehicleTransform.eulerAngles;
+
+        euler.x = Mathf.Approximately(euler.x, 180) ? 0 : euler.x;
+        euler.z = Mathf.Approximately(euler.z, 180) ? 0 : euler.z;
+        euler.y = Mathf.Approximately(euler.y, 180) ? 0 : euler.y;
+
+        euler.x = euler.x > 180 ? euler.x - 360 : euler.x;
+        euler.z = euler.z > 180 ? euler.z - 360 : euler.z;
+        euler.y = euler.y > 180 ? euler.y - 360 : euler.y;
+
+        _telemetryDataData.Angles = euler;
     }
 }
