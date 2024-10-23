@@ -29,7 +29,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Dpad"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""c28dad5a-4545-4f5a-b7a6-67d4ca0a9d46"",
                     ""expectedControlType"": ""Dpad"",
                     ""processors"": """",
@@ -38,7 +38,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Home"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""64b446df-975a-4e02-94b6-f3776a4dac41"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -47,7 +47,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""East"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""1c3e07a3-7101-4608-a1c4-74cb5d7027df"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -56,7 +56,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Left Bumper"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""af28ae4b-4cd6-4f43-a86d-1045ba710102"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -65,7 +65,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Right Bumper"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""fde1c166-6999-4625-a3d0-9db2c5374f59"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -74,7 +74,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Left Shift"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""c11f392f-8942-4ad1-8dee-e16a2470a4a1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -83,7 +83,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Right Shift"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""b59f17e9-8ff8-4fe6-8395-1e38af3b6cd3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -92,7 +92,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Right Stick"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""0248e9b9-1dfb-4bbd-a879-91020040238c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -101,7 +101,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Left Stick"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""2bc9ae33-7048-4dd8-b65a-e02397f765f1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -110,7 +110,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Left Turn"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""34e0ed7c-b41f-4de2-ba12-fc3fb0b76467"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -119,7 +119,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Right Turn"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""5fca0010-b7c0-45fa-af32-9a3bcffb9945"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -128,7 +128,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Minus"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""9f4b7cce-07f1-4d71-8ce4-0a11f6770251"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -137,7 +137,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""North"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""056ae5b5-d61a-4d50-bbb1-ee3246589ac7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -146,7 +146,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Options"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""afdb6d6f-eff7-4aa2-a3f1-3136a0bd7642"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -155,7 +155,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Plus"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""7ec90107-83c6-4be4-8be1-6760334b32f6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -164,7 +164,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Return"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""5cb9e380-49e2-4872-afcc-bfc7827ff1df"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -173,7 +173,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Share"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""7d00e2e0-b565-4b65-83e6-caf7145a3daf"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -182,7 +182,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""South"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""e4892a76-937c-4ba9-b09d-80d75a3fa065"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -191,7 +191,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""West"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""18b2c3bb-1c41-4fb4-991c-e1ed97dc5610"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -533,7 +533,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Shifter 1"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""d718378e-51bc-4d70-9291-4b216fbf18da"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -542,7 +542,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Shifter 2"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""e7b4681f-ae5f-49e0-8c54-3e2b312716a8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -551,7 +551,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Shifter 3"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""ce1a9fe4-8885-428a-938e-c94692ffa420"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -560,7 +560,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Shifter 4"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""f3de7074-35e3-4585-a9bd-07607cf38d39"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -569,7 +569,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Shifter 5"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""9a595845-1a10-4cc9-a7b0-6f67be862548"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -578,7 +578,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Shifter 6"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""940045f6-a587-4e9b-b99a-ffceaa60eeb1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -587,7 +587,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Shifter 7"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""05a540fb-c032-40e5-a9da-09a8ef28c029"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
