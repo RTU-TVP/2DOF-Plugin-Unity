@@ -7,7 +7,7 @@ using UnityEngine;
 
 #endregion
 
-namespace LogitechG29.LogitechSDK
+namespace LogitechG29.Runtime.LogitechSDK
 {
     public class LogitechGsdk
     {
