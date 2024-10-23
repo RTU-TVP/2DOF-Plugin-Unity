@@ -16,7 +16,8 @@ namespace LogitechG29.Sample.Input
         InputController.ISteeringwheelActions,
         InputController.ITransmissionActions
     {
-        [SerializeField] private bool _isDebugMode;
+        #region Unity
+
         private InputController _input;
 
         private void OnEnable()
@@ -39,6 +40,12 @@ namespace LogitechG29.Sample.Input
 
         private void OnDisable()
         {
+            _input.Buttons.Disable();
+            _input.Handbrake.Disable();
+            _input.Pedals.Disable();
+            _input.Steeringwheel.Disable();
+            _input.Transmission.Disable();
+
             _input.Buttons.SetCallbacks(null);
             _input.Handbrake.SetCallbacks(null);
             _input.Pedals.SetCallbacks(null);
@@ -48,271 +55,10 @@ namespace LogitechG29.Sample.Input
             UnRegisterDebugOnActions();
         }
 
-        private void RegisterDebugOnActions()
-        {
-            OnNorthButtonCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnNorthButtonCallback: " + value);
-                }
-            };
-            OnSouthButtonCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnSouthButtonCallback: " + value);
-                }
-            };
-            OnEastButtonCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnEastButtonCallback: " + value);
-                }
-            };
-            OnWestButtonCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnWestButtonCallback: " + value);
-                }
-            };
-            OnRightBumperCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnRightBumperCallback: " + value);
-                }
-            };
-            OnLeftBumperCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnLeftBumperCallback: " + value);
-                }
-            };
-            OnRightShiftCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnRightShiftCallback: " + value);
-                }
-            };
-            OnLeftShiftCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnLeftShiftCallback: " + value);
-                }
-            };
-            OnShareCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnShareCallback: " + value);
-                }
-            };
-            OnOptionsCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnOptionsCallback: " + value);
-                }
-            };
-            OnHomeCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnHomeCallback: " + value);
-                }
-            };
-            OnRightStickButtonCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnRightStickButtonCallback: " + value);
-                }
-            };
-            OnLeftStickButtonCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnLeftStickButtonCallback: " + value);
-                }
-            };
-            OnPlusCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnPlusCallback: " + value);
-                }
-            };
-            OnMinusCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnMinusCallback: " + value);
-                }
-            };
-            OnRightTurnCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnRightTurnCallback: " + value);
-                }
-            };
-            OnLeftTurnCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnLeftTurnCallback: " + value);
-                }
-            };
-            OnReturnCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("OnReturnCallback: " + value);
-                }
-            };
+        #endregion
 
-            HatSwitchCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("HatSwitchCallback: " + value);
-                }
-            };
 
-            Shifter1Callback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("Shifter1Callback: " + value);
-                }
-            };
-            Shifter2Callback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("Shifter2Callback: " + value);
-                }
-            };
-            Shifter3Callback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("Shifter3Callback: " + value);
-                }
-            };
-            Shifter4Callback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("Shifter4Callback: " + value);
-                }
-            };
-            Shifter5Callback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("Shifter5Callback: " + value);
-                }
-            };
-            Shifter6Callback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("Shifter6Callback: " + value);
-                }
-            };
-            Shifter7Callback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("Shifter7Callback: " + value);
-                }
-            };
-
-            SteeringCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("SteeringCallback: " + value);
-                }
-            };
-            ThrottleCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("ThrottleCallback: " + value);
-                }
-            };
-            BrakeCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("BrakeCallback: " + value);
-                }
-            };
-            ClutchCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("ClutchCallback: " + value);
-                }
-            };
-
-            HandbrakeCallback = value =>
-            {
-                if (_isDebugMode)
-                {
-                    Debug.Log("HandbrakeCallback: " + value);
-                }
-            };
-        }
-
-        private void UnRegisterDebugOnActions()
-        {
-            OnNorthButtonCallback = default;
-            OnSouthButtonCallback = default;
-            OnEastButtonCallback = default;
-            OnWestButtonCallback = default;
-            OnRightBumperCallback = default;
-            OnLeftBumperCallback = default;
-            OnRightShiftCallback = default;
-            OnLeftShiftCallback = default;
-            OnShareCallback = default;
-            OnOptionsCallback = default;
-            OnHomeCallback = default;
-            OnRightStickButtonCallback = default;
-            OnLeftStickButtonCallback = default;
-            OnPlusCallback = default;
-            OnMinusCallback = default;
-            OnRightTurnCallback = default;
-            OnLeftTurnCallback = default;
-            OnReturnCallback = default;
-
-            HatSwitchCallback = default;
-
-            Shifter1Callback = default;
-            Shifter2Callback = default;
-            Shifter3Callback = default;
-            Shifter4Callback = default;
-            Shifter5Callback = default;
-            Shifter6Callback = default;
-            Shifter7Callback = default;
-
-            SteeringCallback = default;
-            ThrottleCallback = default;
-            BrakeCallback = default;
-            ClutchCallback = default;
-
-            HandbrakeCallback = default;
-        }
-
-        #region Values
+        #region Properties
 
         public bool NorthButton { get; private set; }
         public bool SouthButton { get; private set; }
@@ -352,61 +98,134 @@ namespace LogitechG29.Sample.Input
 
         #endregion
 
-        #region Actions
 
-        public Action<bool> OnNorthButtonCallback;
-        public Action<bool> OnSouthButtonCallback;
-        public Action<bool> OnEastButtonCallback;
-        public Action<bool> OnWestButtonCallback;
-        public Action<bool> OnRightBumperCallback;
-        public Action<bool> OnLeftBumperCallback;
-        public Action<bool> OnRightShiftCallback;
-        public Action<bool> OnLeftShiftCallback;
-        public Action<bool> OnShareCallback;
-        public Action<bool> OnOptionsCallback;
-        public Action<bool> OnHomeCallback;
-        public Action<bool> OnRightStickButtonCallback;
-        public Action<bool> OnLeftStickButtonCallback;
-        public Action<bool> OnPlusCallback;
-        public Action<bool> OnMinusCallback;
-        public Action<bool> OnRightTurnCallback;
-        public Action<bool> OnLeftTurnCallback;
-        public Action<bool> OnReturnCallback;
+        #region Events
 
-        public Action<Vector2> HatSwitchCallback;
+        public event Action<bool> OnNorthButtonCallback;
+        public event Action<bool> OnSouthButtonCallback;
+        public event Action<bool> OnEastButtonCallback;
+        public event Action<bool> OnWestButtonCallback;
+        public event Action<bool> OnRightBumperCallback;
+        public event Action<bool> OnLeftBumperCallback;
+        public event Action<bool> OnRightShiftCallback;
+        public event Action<bool> OnLeftShiftCallback;
+        public event Action<bool> OnShareCallback;
+        public event Action<bool> OnOptionsCallback;
+        public event Action<bool> OnHomeCallback;
+        public event Action<bool> OnRightStickButtonCallback;
+        public event Action<bool> OnLeftStickButtonCallback;
+        public event Action<bool> OnPlusCallback;
+        public event Action<bool> OnMinusCallback;
+        public event Action<bool> OnRightTurnCallback;
+        public event Action<bool> OnLeftTurnCallback;
+        public event Action<bool> OnReturnCallback;
 
-        public Action<bool> Shifter1Callback;
-        public Action<bool> Shifter2Callback;
-        public Action<bool> Shifter3Callback;
-        public Action<bool> Shifter4Callback;
-        public Action<bool> Shifter5Callback;
-        public Action<bool> Shifter6Callback;
-        public Action<bool> Shifter7Callback;
+        public event Action<Vector2> HatSwitchCallback;
 
-        public Action<float> SteeringCallback;
-        public Action<float> ThrottleCallback;
-        public Action<float> BrakeCallback;
-        public Action<float> ClutchCallback;
+        public event Action<bool> Shifter1Callback;
+        public event Action<bool> Shifter2Callback;
+        public event Action<bool> Shifter3Callback;
+        public event Action<bool> Shifter4Callback;
+        public event Action<bool> Shifter5Callback;
+        public event Action<bool> Shifter6Callback;
+        public event Action<bool> Shifter7Callback;
 
-        public Action<float> HandbrakeCallback;
+        public event Action<float> SteeringCallback;
+        public event Action<float> ThrottleCallback;
+        public event Action<float> BrakeCallback;
+        public event Action<float> ClutchCallback;
 
-        #endregion
-
-        #region DebugMode
-
-        public void SetDebugMode(bool value)
-        {
-            _isDebugMode = value;
-        }
-
-        public bool GetDebugMode()
-        {
-            return _isDebugMode;
-        }
+        public event Action<float> HandbrakeCallback;
 
         #endregion
 
-        #region Handlers
+
+        #region Debug
+        
+        [SerializeField] private bool isDebugModeOnStartup;
+
+        public bool GetDebugMode() => isDebugModeOnStartup;
+        public void SetDebugMode(bool value) => isDebugModeOnStartup = value;
+
+        private void RegisterDebugOnActions()
+        {
+            OnNorthButtonCallback += value => PrintDebug($"{nameof(OnNorthButtonCallback)}: {value}");
+            OnSouthButtonCallback += value => PrintDebug($"{nameof(OnSouthButtonCallback)}: {value}");
+            OnEastButtonCallback += value => PrintDebug($"{nameof(OnEastButtonCallback)}: {value}");
+            OnWestButtonCallback += value => PrintDebug($"{nameof(OnWestButtonCallback)}: {value}");
+            OnRightBumperCallback += value => PrintDebug($"{nameof(OnRightBumperCallback)}: {value}");
+            OnLeftBumperCallback += value => PrintDebug($"{nameof(OnLeftBumperCallback)}: {value}");
+            OnRightShiftCallback += value => PrintDebug($"{nameof(OnRightShiftCallback)}: {value}");
+            OnLeftShiftCallback += value => PrintDebug($"{nameof(OnLeftShiftCallback)}: {value}");
+            OnShareCallback += value => PrintDebug($"{nameof(OnShareCallback)}: {value}");
+            OnOptionsCallback += value => PrintDebug($"{nameof(OnOptionsCallback)}: {value}");
+            OnHomeCallback += value => PrintDebug($"{nameof(OnHomeCallback)}: {value}");
+            OnRightStickButtonCallback += value => PrintDebug($"{nameof(OnRightStickButtonCallback)}: {value}");
+            OnLeftStickButtonCallback += value => PrintDebug($"{nameof(OnLeftStickButtonCallback)}: {value}");
+            OnPlusCallback += value => PrintDebug($"{nameof(OnPlusCallback)}: {value}");
+            OnMinusCallback += value => PrintDebug($"{nameof(OnMinusCallback)}: {value}");
+            OnRightTurnCallback += value => PrintDebug($"{nameof(OnRightTurnCallback)}: {value}");
+            OnLeftTurnCallback += value => PrintDebug($"{nameof(OnLeftTurnCallback)}: {value}");
+            OnReturnCallback += value => PrintDebug($"{nameof(OnReturnCallback)}: {value}");
+            HatSwitchCallback += value => PrintDebug($"{nameof(HatSwitchCallback)}: {value}");
+            Shifter1Callback += value => PrintDebug($"{nameof(Shifter1Callback)}: {value}");
+            Shifter2Callback += value => PrintDebug($"{nameof(Shifter2Callback)}: {value}");
+            Shifter3Callback += value => PrintDebug($"{nameof(Shifter3Callback)}: {value}");
+            Shifter4Callback += value => PrintDebug($"{nameof(Shifter4Callback)}: {value}");
+            Shifter5Callback += value => PrintDebug($"{nameof(Shifter5Callback)}: {value}");
+            Shifter6Callback += value => PrintDebug($"{nameof(Shifter6Callback)}: {value}");
+            Shifter7Callback += value => PrintDebug($"{nameof(Shifter7Callback)}: {value}");
+            SteeringCallback += value => PrintDebug($"{nameof(SteeringCallback)}: {value}");
+            ThrottleCallback += value => PrintDebug($"{nameof(ThrottleCallback)}: {value}");
+            BrakeCallback += value => PrintDebug($"{nameof(BrakeCallback)}: {value}");
+            ClutchCallback += value => PrintDebug($"{nameof(ClutchCallback)}: {value}");
+            HandbrakeCallback += value => PrintDebug($"{nameof(HandbrakeCallback)}: {value}");
+        }
+
+        private void UnRegisterDebugOnActions()
+        {
+            OnNorthButtonCallback -= value => PrintDebug($"{nameof(OnNorthButtonCallback)}: {value}");
+            OnSouthButtonCallback -= value => PrintDebug($"{nameof(OnSouthButtonCallback)}: {value}");
+            OnEastButtonCallback -= value => PrintDebug($"{nameof(OnEastButtonCallback)}: {value}");
+            OnWestButtonCallback -= value => PrintDebug($"{nameof(OnWestButtonCallback)}: {value}");
+            OnRightBumperCallback -= value => PrintDebug($"{nameof(OnRightBumperCallback)}: {value}");
+            OnLeftBumperCallback -= value => PrintDebug($"{nameof(OnLeftBumperCallback)}: {value}");
+            OnRightShiftCallback -= value => PrintDebug($"{nameof(OnRightShiftCallback)}: {value}");
+            OnLeftShiftCallback -= value => PrintDebug($"{nameof(OnLeftShiftCallback)}: {value}");
+            OnShareCallback -= value => PrintDebug($"{nameof(OnShareCallback)}: {value}");
+            OnOptionsCallback -= value => PrintDebug($"{nameof(OnOptionsCallback)}: {value}");
+            OnHomeCallback -= value => PrintDebug($"{nameof(OnHomeCallback)}: {value}");
+            OnRightStickButtonCallback -= value => PrintDebug($"{nameof(OnRightStickButtonCallback)}: {value}");
+            OnLeftStickButtonCallback -= value => PrintDebug($"{nameof(OnLeftStickButtonCallback)}: {value}");
+            OnPlusCallback -= value => PrintDebug($"{nameof(OnPlusCallback)}: {value}");
+            OnMinusCallback -= value => PrintDebug($"{nameof(OnMinusCallback)}: {value}");
+            OnRightTurnCallback -= value => PrintDebug($"{nameof(OnRightTurnCallback)}: {value}");
+            OnLeftTurnCallback -= value => PrintDebug($"{nameof(OnLeftTurnCallback)}: {value}");
+            OnReturnCallback -= value => PrintDebug($"{nameof(OnReturnCallback)}: {value}");
+            HatSwitchCallback -= value => PrintDebug($"{nameof(HatSwitchCallback)}: {value}");
+            Shifter1Callback -= value => PrintDebug($"{nameof(Shifter1Callback)}: {value}");
+            Shifter2Callback -= value => PrintDebug($"{nameof(Shifter2Callback)}: {value}");
+            Shifter3Callback -= value => PrintDebug($"{nameof(Shifter3Callback)}: {value}");
+            Shifter4Callback -= value => PrintDebug($"{nameof(Shifter4Callback)}: {value}");
+            Shifter5Callback -= value => PrintDebug($"{nameof(Shifter5Callback)}: {value}");
+            Shifter6Callback -= value => PrintDebug($"{nameof(Shifter6Callback)}: {value}");
+            Shifter7Callback -= value => PrintDebug($"{nameof(Shifter7Callback)}: {value}");
+            SteeringCallback -= value => PrintDebug($"{nameof(SteeringCallback)}: {value}");
+            ThrottleCallback -= value => PrintDebug($"{nameof(ThrottleCallback)}: {value}");
+            BrakeCallback -= value => PrintDebug($"{nameof(BrakeCallback)}: {value}");
+            ClutchCallback -= value => PrintDebug($"{nameof(ClutchCallback)}: {value}");
+            HandbrakeCallback -= value => PrintDebug($"{nameof(HandbrakeCallback)}: {value}");
+        }
+
+        private void PrintDebug(string value)
+        {
+            if (isDebugModeOnStartup) Debug.Log($"{value}");
+        }
+
+        #endregion
+
+
+        #region Input Actions
 
         public void OnDpad(InputAction.CallbackContext context)
         {
