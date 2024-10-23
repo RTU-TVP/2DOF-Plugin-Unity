@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
-using LogitechG29.LogitechSDK;
+using LogitechG29.Runtime.LogitechSDK;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,7 +16,7 @@ using UnityEngine.Scripting;
 
 #endregion
 
-namespace LogitechG29
+namespace LogitechG29.Runtime
 {
 #if UNITY_EDITOR
     [Preserve, InitializeOnLoad]

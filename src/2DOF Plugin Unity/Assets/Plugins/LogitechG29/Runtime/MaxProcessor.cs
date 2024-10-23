@@ -7,7 +7,7 @@ using UnityEngine.Scripting;
 
 #endregion
 
-namespace LogitechG29
+namespace LogitechG29.Runtime
 {
 #if UNITY_EDITOR
     [InitializeOnLoad, Preserve]

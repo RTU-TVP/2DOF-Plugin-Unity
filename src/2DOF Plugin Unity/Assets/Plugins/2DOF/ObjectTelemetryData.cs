@@ -24,11 +24,11 @@ namespace _2DOF
         {
             (double)
             Angles.x,
-            Angles.z,
             Angles.y,
-            Velocity.z,
+            Angles.z,
             Velocity.x,
-            Velocity.y
+            Velocity.y,
+            Velocity.z
         };
 
         /// <summary>

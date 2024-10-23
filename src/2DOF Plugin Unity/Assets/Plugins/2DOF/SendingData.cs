@@ -13,12 +13,12 @@ namespace _2DOF
         /// В миллисекундах.
         /// </summary>
         public const int WAIT_TIME = 20;
-        
+
         /// <summary>
         /// Данные телеметрии объекта.
         /// </summary>
         public readonly ObjectTelemetryData ObjectTelemetryData = new();
-        
+
         private const string MAP_NAME = "2DOFMemoryDataGrabber";
         private Thread _thread;
 
