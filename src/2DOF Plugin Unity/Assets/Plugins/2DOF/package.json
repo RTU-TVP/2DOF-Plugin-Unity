@@ -1,0 +1,7 @@
+﻿{
+  "name": "com.tvp.2dof",
+  "displayName": "2DOF",
+  "version": "1.3.0",
+  "description": "The plugin allows you to interact with the program that controls the 2DOF chair in Unity.",
+  "dependencies": {}
+}
