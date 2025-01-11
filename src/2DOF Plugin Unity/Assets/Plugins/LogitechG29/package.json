@@ -1,0 +1,7 @@
+﻿{
+  "name": "com.tvp.logitechg29",
+  "displayName": "LogitechG29",
+  "version": "1.3.0",
+  "description": "The plugin supports the Logitech G29 steering wheel in Unity.",
+  "dependencies": {}
+}
