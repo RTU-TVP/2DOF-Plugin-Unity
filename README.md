@@ -14,6 +14,18 @@
 
 * Пропишите логику обработки входных данных: В вашем скрипте напишите логику для обработки результатов ввода, используя события и методы InputControllerReader.
 
+### При проблемах в создаваемой сборки игры, что часть функционала руля не работает 
+
+#### Внесите небольшое изменение в код:
+
+В файле, расположенном по пути: "Library\PackageCache\com.unity.inputsystem@1.7.0\InputSystem\InputManager.cs"
+
+В строке 2333, внутри блока catch, необходимо внести изменения:
+
+Вместо `Debug.LogError("Could not create a device for '{description}' (exception: {exception})");`
+использовать `Debug.Log("Could not create a device for '{description}' (exception: {exception})");`
+
+
 ## Подвижная платформа 2DOF
 
 ### Руководство по установке подвижной платформы

@@ -14,6 +14,17 @@
 
 * Write input data processing logic: In your script, write the logic for processing input results using events and methods of InputControllerReader.
 
+### If there are problems in the build of the game being created, that part of the steering wheel functionality is not working 
+
+#### Make a small change to the code:
+
+In the file located on the path: "Library\PackageCache\com.unity.inputsystem@1.7.0\InputSystem\InputManager.cs "
+
+In line 2333, inside the catch block, you need to make changes:
+
+Instead of `Debug.LogError("Could not create a device for '{description}' (exception: {exception})");`
+use `Debug.Log("Could not create a device for '{description}' (exception: {exception})");`
+
 ## 2DOF Mobile Platform
 
 ### Mobile Platform Setup Guide
