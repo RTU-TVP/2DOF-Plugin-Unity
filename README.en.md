@@ -1,6 +1,6 @@
 # 2DOF Plugin Unity
 
-[RU](README.md) | [EN](README_ENG.md)
+[RU](README.md) | [EN](README.en.md)
 
 ## Logitech G29 Steering Wheel and Gearbox Shifter
 
