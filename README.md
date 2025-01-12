@@ -24,22 +24,27 @@
 
 ### Использование плагина
 
-* Установка пакета Input System.
-
-* Подключение к InputControllerReader: Создайте скрипт для обработки входных данных, создайте ссылку на экземпляр InputControllerReader, закрепите скрипт на игровом объекте и привяжите экземпляр.
-
-* Пропишите логику обработки входных данных: В вашем скрипте напишите логику для обработки результатов ввода, используя события и методы InputControllerReader.
+1. Установка пакета Input System.
+2. Подключение к InputControllerReader: Создайте скрипт для обработки входных данных, создайте ссылку на экземпляр InputControllerReader, закрепите скрипт на игровом объекте и привяжите экземпляр.
+3. Пропишите логику обработки входных данных: В вашем скрипте напишите логику для обработки результатов ввода, используя события и методы InputControllerReader.
 
 ### При проблемах в создаваемой сборки игры, что часть функционала руля не работает
 
 #### Внесите небольшое изменение в код
 
-В файле, расположенном по пути: "Library\PackageCache\com.unity.inputsystem@1.7.0\InputSystem\InputManager.cs"
+В файле, расположенном по пути: `Library\PackageCache\com.unity.inputsystem@1.7.0\InputSystem\InputManager.cs`
 
 В строке 2333, внутри блока catch, необходимо внести изменения:
 
-Вместо `Debug.LogError("Could not create a device for '{description}' (exception: {exception})");`
-использовать `Debug.Log("Could not create a device for '{description}' (exception: {exception})");`
+```csharp
+Debug.LogError("Could not create a device for '{description}' (exception: {exception})");
+```
+
+на
+
+```csharp
+Debug.Log("Could not create a device for '{description}' (exception: {exception})");
+```
 
 ## Подвижная платформа 2DOF
 
@@ -61,4 +66,8 @@
 
 ### Использование плагина подвижной платформы
 
-* Настройка игрового объекта для считывания данных: Создайте/добавьте автомобиль на сцену, добавьте компонент Rigidbody, добавьте скрипт CarTelemetryHandler на игровой объект и подключите Transform и Rigidbody.
+1. Настройка игрового объекта для считывания данных:
+   * Создайте/добавьте автомобиль на сцену.
+   * Добавьте компонент Rigidbody.
+   * Добавьте скрипт CarTelemetryHandler на игровой объект.
+   * Подключите Transform и Rigidbody.

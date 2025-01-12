@@ -1,34 +1,80 @@
 # 2DOF Plugin Unity
 
-[RU](README.md) | [EN](README.en.md)
+[Рус](README.md) | [ENG](README.en.md)
 
-## Logitech G29 Steering Wheel and Gearbox Shifter
+## Logitech G29 Wheel and Gearbox
 
 ### Installation Guide
 
-* Import assets: Import the necessary files into your Unity project.
+You can install the plugins using any of the following methods:
 
-* Install Input System package: Open Package Manager, go to the Unity Registry tab, find Input System and install it.
+* **Download the unitypackage**:
+  * Download one of the public plugin versions available in the [Releases](https://github.com/RTU-TVP/2DOF-Plugin-Unity/releases) section.
+  * Import the unitypackage into your Unity project.
 
-* Connect to InputControllerReader: Create a script for processing input data, create a reference to the InputControllerReader instance, attach the script to a game object and bind the instance.
+* **Clone the repository**:
+  * Clone the repository into your Unity project.
+  * Go to the **Plugins/LogitechG29** folder and import the plugins into your Unity project.
 
-* Write input data processing logic: In your script, write the logic for processing input results using events and methods of InputControllerReader.
+* **Using the Package Manager (for Unity 2019.3 and higher)**:
+  * Open the Package Manager in Unity.
+  * Click the **+** button in the top-left corner of the Package Manager window.
+  * Select **Add package from git URL**.
+  * Enter the plugin repository link:  
+    `https://github.com/RTU-TVP/2DOF-Plugin-Unity.git?path=src/2DOF-Plugin-Unity/Assets/Plugins/LogitechG29`.
 
-### If there are problems in the build of the game being created, that part of the steering wheel functionality is not working 
+### Using the Plugin
 
-#### Make a small change to the code:
+1. **Install the Input System package.**  
+2. **Connect to the InputControllerReader**: Create a script to handle input data, create a reference to the InputControllerReader instance, attach the script to a GameObject, and link the instance.
+3. **Define the logic for processing input**: In your script, write the logic for handling the input results using events and methods from InputControllerReader.
 
-In the file located on the path: "Library\PackageCache\com.unity.inputsystem@1.7.0\InputSystem\InputManager.cs "
+### If there are issues in the built game where some wheel functionality does not work
 
-In line 2333, inside the catch block, you need to make changes:
+#### Make a small code change
 
-Instead of `Debug.LogError("Could not create a device for '{description}' (exception: {exception})");`
-use `Debug.Log("Could not create a device for '{description}' (exception: {exception})");`
+In the file located at:  
+`Library\PackageCache\com.unity.inputsystem@1.7.0\InputSystem\InputManager.cs`
 
-## 2DOF Mobile Platform
+On line **2333**, inside the **catch** block, replace:
 
-### Mobile Platform Setup Guide
+```csharp
+Debug.LogError("Could not create a device for '{description}' (exception: {exception})");
+```
 
-* Import assets: Import the necessary files into your Unity project.
+with
 
-* Configure game object for reading data: Create/add a car to the scene, add a Rigidbody component, add the CarTelemetryHandler script to the game object and connect Transform and Rigidbody components.
+```csharp
+Debug.Log("Could not create a device for '{description}' (exception: {exception})");
+```
+
+---
+
+## 2DOF Motion Platform
+
+### Motion Platform Installation Guide
+
+You can install the motion platform plugin using any of the following methods:
+
+* **Download the unitypackage**:
+  * Download one of the public plugin versions available in the [Releases](https://github.com/RTU-TVP/2DOF-Plugin-Unity/releases) section.
+  * Import the unitypackage into your Unity project.
+
+* **Clone the repository**:
+  * Clone the repository into your Unity project.
+  * Go to the **Plugins/2DOF** folder and import the plugins into your Unity project.
+
+* **Using the Package Manager (for Unity 2019.3 and higher)**:
+  * Open the Package Manager in Unity.
+  * Click the **+** button in the top-left corner of the Package Manager window.
+  * Select **Add package from git URL**.
+  * Enter the repository link:  
+    `https://github.com/RTU-TVP/2DOF-Plugin-Unity.git?path=src/2DOF-Plugin-Unity/Assets/Plugins/2DOF`.
+
+### Using the 2DOF Motion Platform Plugin
+
+1. **Configure the GameObject to read data**:
+   * Create/add a car to your scene.
+   * Add a **Rigidbody** component.
+   * Add the **CarTelemetryHandler** script to the GameObject.
+   * Link the corresponding **Transform** and **Rigidbody** in the script.
